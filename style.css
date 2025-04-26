@@ -1,0 +1,875 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* overflow: hidden; */
+    position: relative;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.cal {
+    width: 500px;
+    height: 650px;
+    position: relative;
+    margin: -20px auto 0 auto;
+    background: #070022;
+    border-radius: 15px;
+    z-index: 0;
+}
+
+.cal .inp {
+    width: 100%;
+    height: 20%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cal .inp input {
+    width: 80%;
+    height: 100px;
+    outline: none;
+    padding: 0 0 0 20px;
+    font-size: 24px;
+    -moz-appearance: textfield;
+    border-radius: 10px;
+    border: none;
+    z-index: 0;
+}
+
+.cal .obs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 17px;
+    margin: 50px 0 0 0;
+}
+
+.cal .left,
+.cal .right {
+    width: 33.2%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.cal .left .in,
+.cal .right .in {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 50%;
+}
+
+.cal .left .in button,
+.cal .right .in button {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    transition: .3s;
+    cursor: pointer;
+    background: #fff;
+}
+
+.cal .right .in .calFloor {
+    font-size: 32px;
+}
+
+.config {
+    width: 380px;
+    height: 200px;
+    position: absolute;
+    display: none;
+    transform: scale(0.8) translateY(-20px);
+    visibility: hidden;
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+}
+
+.config.active {
+    width: 400px;
+    height: 200px;
+    display: block;
+    transform: scale(1.1) translateY(20px) translateX(30px);
+    visibility: visible;
+    opacity: 1;
+}
+
+.config div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 16.66%;
+}
+
+.config div input {
+    width: 80px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.castom {
+    cursor: pointer;
+    width: 160px;
+    height: 60px;
+    border: none;
+    outline: none;
+    background: none;
+    color: #fff;
+    font-size: 18px;
+    margin: 20px 0 0 10px;
+    transition: 0.3s;
+    color: #000;
+    outline: 1px solid;
+}
+
+.castom:active {
+    transform: scale(0.9);
+}
+
+.cal button:active {
+    transform: scale(0.9);
+    background: #000;
+}
+
+.cal button.active {
+    transform: scale(0.9);
+    background: #000;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    transition: .4s;
+    border-radius: 34px;
+    border: 1px solid;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #fff;
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: 2px 2px 2px #000;
+}
+
+input:checked+.slider {
+    background-color: #000;
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+body {
+    transition: background-color 0.3s, color 0.3s;
+    background: #fff;
+}
+
+body.dark-mode {
+    background: #000;
+    color: #fff;
+}
+
+.castom.dark-mode {
+    outline: 1px solid #fff;
+    background: none;
+    color: #fff;
+}
+
+.cal.dark-mode {
+    background: #000;
+    box-shadow: 0px 0px 10px 1px#fff;
+    color: #000;
+}
+
+.cal input.dark-mode {
+    background: #fff;
+    color: #000;
+}
+
+h1 {
+    position: absolute;
+    margin: -50px 0 0 1300px;
+    z-index: 999;
+    text-shadow: 0 0 10px #ffffff, 0 0 15px #000;
+}
+
+h1.dark-mode {
+    color: #FFFFFF;
+    text-shadow: 0 0 5px #000000, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #bdbdbd, 0 0 30px #bdbdbd, 0 0 40px #bdbdbd, 0 0 55px #a7a7a7, 0 0 75px #ffffff;
+}
+
+input:disabled {
+    background: #fff;
+    color: #000;
+}
+
+
+.copy-btn {
+    font-size: 16px;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    z-index: 99999;
+    background: none;
+    color: #000;
+    border: none;
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.copy-btn.dark-mode {
+    color: #fff;
+}
+
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+}
+
+.toast {
+    background-color: #113a14;
+    color: white;
+    padding: 16px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.toast .toast-title {
+    font-weight: bold;
+}
+
+.toast .toast-message {
+    color: #ccc;
+}
+
+.toast .toast-close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.toast .progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background-color: #00ff00;
+    animation: fillLine 3s linear forwards;
+}
+
+@keyframes fillLine {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+
+.historic {
+    cursor: pointer;
+    width: 160px;
+    height: 60px;
+    border: none;
+    outline: none;
+    background: none;
+    color: #fff;
+    font-size: 18px;
+    margin: 20px 0 0 77.3%;
+    transition: 0.3s;
+    color: #000;
+    outline: 1px solid;
+}
+
+.historic:active {
+    transform: scale(0.9);
+}
+
+.historic.dark-mode {
+    outline: 1px solid #fff;
+    color: #fff;
+    background: none;
+}
+
+.history {
+    width: 360px;
+    height: 200px;
+    position: absolute;
+    display: none;
+    transform: scale(0.8) translateY(-20px);
+    visibility: hidden;
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+    margin: 10px 0 0 71%;
+    outline: 1px solid;
+    overflow-x: hidden;
+}
+
+.history.active {
+    width: 380px;
+    height: 200px;
+    display: block;
+    transform: scale(1.1) translateY(20px) translateX(30px);
+    visibility: visible;
+    opacity: 1;
+    overflow-x: hidden;
+}
+
+.h-btn {
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.delete-btn-h {
+    width: 30px;
+    height: 30px;
+    color: #f00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    cursor: pointer;
+    position: sticky;
+    top: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    outline: none;
+    transition: 0.3s ease-in-out;
+    position: fixed;
+}
+
+.delete-btn-h:hover {
+    border: 3px solid #f00;
+    background: red;
+    color: #fff;
+}
+
+.delete-dark-mode {
+    width: 100%;
+    height: 100vh;
+    background: #000000ec;
+    display: none;
+    position: absolute;
+    z-index: 9999999999999999999999999;
+    margin: -80px 0 0 0;
+    align-items: center;
+}
+
+.delete-dark-mode.active {
+    display: block;
+    position: absolute;
+}
+
+.confirm-to-delete {
+    margin: auto;
+    width: 300px;
+    height: 200px;
+    position: relative;
+    display: none;
+    margin: 200px auto 0 auto;
+}
+
+.confirm-to-delete.active {
+    display: block;
+}
+
+.btn-group {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    margin: 50px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.confirm-to-delete h1 {
+    margin: 0;
+    text-align: center;
+    color: #000;
+    text-shadow: none;
+    color: #fff;
+    font-family: sans-serif;
+    display: block;
+}
+
+.confirm-to-delete button {
+    width: 100px;
+    height: 40px;
+    margin: 120px 0 0 0;
+}
+
+.confirm-to-delete .no {
+    background: none;
+    border: 0.1px solid #f00;
+    color: #f00;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 0;
+}
+
+.confirm-to-delete .no:hover {
+    border: 7px solid #f00;
+    background: #f00;
+    color: #fff;
+}
+
+.confirm-to-delete .yes {
+    background: none;
+    border: 0.1px solid #008800;
+    color: #008800;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 0;
+}
+
+.confirm-to-delete .yes:hover {
+    border: 7px solid #008800;
+    background: #008800;
+    color: #fff;
+}
+
+.for-info {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+    left: 250px;
+    top: 28px;
+    position: absolute;
+}
+
+.for-info .infoBtn {
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.info-dark-mode {
+    width: 100%;
+    height: 100vh;
+    background: #000000ec;
+    position: absolute;
+    z-index: 9999999;
+    margin: -80px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.info-dark-mode.active {
+    display: flex;
+}
+
+.info {
+    width: 300px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.info.active {
+    display: block;
+}
+
+.info ul {
+    width: 100%;
+    height: 100%;
+}
+
+.info ul li {
+    list-style: none;
+    width: 100%;
+    height: 12%;
+    color: #fff;
+}
+
+.info button {
+    width: 30px;
+    height: 30px;
+    border: none;
+}
+
+.info button:disabled {
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+}
+
+.info button:nth-child(1) {
+    width: 50px;
+}
+
+.info button:nth-child(2) {
+    width: 40px;
+}
+
+.info li:nth-child(6) button:nth-child(1) {
+    width: 80px;
+}
+
+.info li:nth-child(7) button:last-child {
+    width: 30px;
+}
+
+.info .close {
+    width: 100px;
+    height: 40px;
+    background: none;
+    border: 1px solid #fff;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin: 18px auto 0 auto;
+    position: relative;
+    display: block;
+}
+
+.info .close:hover {
+    background: #fff;
+    border: 5px solid #fff;
+    color: #000;
+}
+
+.castom-div {
+    position: absolute;
+}
+
+.castom-div {
+    position: relative;
+    display: inline-block;
+}
+
+.close-btn {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: #2b2b30;
+    color: #d6d6d6;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease-in-out;
+    font-size: 16px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.tooltip-arrow {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #2b2b30;
+}
+
+.castom-div:hover .tooltip,
+.for-info:hover .tooltip,
+.show-history:hover .tooltip, 
+.copy:hover .tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(15%);
+    pointer-events: auto;
+    text-align: center;
+}
+
+.copy:hover .tooltip{
+    transform: translateX(-50%) translateY(-10%);
+}
+
+.for-info:hover .tooltip{
+    transform: translateX(-50%) translateY(-0%);
+}
+
+.for-info button:disabled{
+    background: #fff;
+    color: #000;
+    border: none;
+    width: 40px;
+}
+
+.for-info button:last-child{
+    width: 20px;
+}
+
+.castom-div button:disabled{
+    background: #fff;
+    color: #000;
+    border: none;
+    width: 40px;
+}
+
+.show-history{
+    position: absolute;
+    width: 160px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -60px 0 0 1350px;
+}
+
+.show-history button{
+    margin: 0;
+}
+
+.show-history button:disabled{
+    background: #fff;
+    color: #000;
+    border: none;
+    width: 40px;
+}
+
+.show-history button:last-child{
+    width: 30px;
+}
+
+.copy{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 0 430px;
+    position: absolute;
+}
+
+@media screen and (max-width: 450px) {
+    .cal {
+        width: 300px;
+        height: 450px;
+        position: relative;
+        margin: 80px auto 0 auto;
+    }
+
+    .cal .inp {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .cal .inp input {
+        width: 80%;
+        height: 70%;
+        margin: auto;
+        padding: 0 0 0 2px;
+    }
+
+    .cal .obs {
+        width: 100%;
+        height: 70%;
+        position: relative;
+        display: flex;
+        margin: 30px 0 0 0;
+    }
+
+    .cal .obs .left,
+    .cal .obs .right {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cal .obs .left .in,
+    .cal .obs .right .in {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .cal .obs .left .in {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
+    .cal .obs .right .in {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .cal .obs .left .in button,
+    .cal .obs .right .in button {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    h1 {
+        position: absolute;
+        z-index: -9999;
+        margin: -510px 0 0 120px;
+    }
+
+    .castom {
+        outline: 1px solid;
+    }
+
+    .config {
+        width: 300px;
+        height: 300px;
+        background: #000;
+        color: #fff;
+        padding: 5px;
+        margin: 0 0 0 -7px;
+        z-index: 999999999999;
+    }
+
+    .config.active {
+        width: 300px;
+        height: 300px;
+        background: #000;
+        color: #fff;
+        padding: 5px;
+        margin: 0 0 0 -7px;
+    }
+
+    .config.active p {
+        font-family: sans-serif;
+        font-size: 16px;
+    }
+
+    .copy-btn {
+        margin: 10px 0 0 0px;
+        z-index: 999999;
+    }
+
+    .historic {
+        margin: 0 0 0 30px;
+    }
+
+    .history {
+        width: 300px;
+        height: 300px;
+        background: #000;
+        color: #fff;
+        padding: 5px;
+        margin: 0 0 0 -7px;
+        z-index: 999999999999;
+    }
+
+    .history.active {
+        width: 300px;
+        height: 300px;
+        background: #000;
+        color: #fff;
+        padding: 5px;
+        margin: 0 0 0 -7px;
+    }
+
+    .h-btn {
+        width: 97%;
+    }
+
+    .for-info {
+        display: none;
+    }
+}

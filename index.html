@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator by #Z#</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="ChatGPT Image 7 апр. 2025 г., 22_47_51.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+
+    <div class="castom-div">
+        <button class="castom">Castom Settings</button>
+        <div class="tooltip" id="tooltipCastom">
+            Castom Settings
+            <ul>
+                <li><button disabled>Insert</button></li>
+            </ul>
+            <div class="tooltip-arrow"></div>
+        </div>
+    </div>
+    <div class="config">
+        <div class="cal-bg">
+            <p>Background Color</p>
+            <input type="color" name="" id="cal-bg">
+        </div>
+        <div class="cal-inp-bg">
+            <p>Calculator's Display bg color</p>
+            <input type="color" id="inp-bg">
+        </div>
+        <div class="cal-inp-color">
+            <p>Calculator's Display color</p>
+            <input type="color" name="" id="inp-color">
+        </div>
+        <div class="cal-btn-bg">
+            <p>Calculator's Button bg color</p>
+            <input type="color" name="" id="cal-btn">
+        </div>
+        <div class="cal-btn-color">
+            <p>Calculator's Button color</p>
+            <input type="color" name="" id="cal-btn-color">
+        </div>
+        <div class="dark-mode">
+            <p>Dark Mode</p>
+            <label class="switch">
+                <input type="checkbox" id="onOffSwitch">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="for-info">
+        <button class="infoBtn"><i class="fa-solid fa-info"></i></button>
+        <div class="tooltip" id="tooltipInfo">
+            Info
+            <ul>
+                <li><button disabled>CTRL</button>&nbsp; + &nbsp;<button disabled>I</button>
+            </ul>
+            <div class="tooltip-arrow"></div>
+        </div>
+    </div>
+
+    <div class="info-dark-mode">
+        <div class="info">
+            <ul>
+                <li><button disabled>CTRL</button>&nbsp; + &nbsp;<button disabled>ALT</button>&nbsp; + &nbsp;<button
+                        disabled>H</button>&nbsp; = &nbsp;Show History</li>
+                <li><button disabled>Insert</button>&nbsp; = &nbsp;Castom</li>
+                <li><button disabled>Enter</button>&nbsp; = &nbsp;View Answer</li>
+                <li><button disabled>=</button>&nbsp; = &nbsp;View Answer</li>
+                <li><button disabled>Delete</button>&nbsp; = &nbsp;Clear</li>
+                <li><button disabled>BackSpace</button>&nbsp; = &nbsp;Back</li>
+                <li><button disabled>CTRL</button>&nbsp; + &nbsp;<button disabled>I</button>&nbsp; = &nbsp; View Info
+                </li>
+                <button class="close">Close</button>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div class="copy">
+        <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
+        <div class="tooltip">
+            Click to Copy
+            <div class="tooltip-arrow"></div>
+        </div>
+    </div>
+
+    <div class="toast-container"></div>
+
+
+    <div class="show-history">
+        <button class="historic">Show History</button>
+        <div class="tooltip" id="tooltipHistory">
+            Show History
+            <ul>
+                <li><button disabled>CTRL</button>&nbsp; + &nbsp;<button disabled>ALT</button>&nbsp; + &nbsp;<button
+                        disabled>H</button></li>
+            </ul>
+            <div class="tooltip-arrow"></div>
+        </div>
+    </div>
+    <div class="history">
+        <div class="h-btn"><button class="delete-btn-h"><i class="fa-solid fa-trash"></i></button></div>
+    </div>
+
+    <div class="delete-dark-mode">
+        <div class="confirm-to-delete">
+            <h1>Are you sure to delete history?</h1>
+            <div class="btn-group">
+                <button class="no">No <i class="fa-solid fa-x"></i></button>
+                <button class="yes">Yes <i class="fa-solid fa-trash"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="cal">
+        <div class="inp">
+            <input type="text" name="" id="input">
+        </div>
+
+        <div class="obs">
+            <div class="left">
+                <div class="in">
+                    <button class="calSkLeft">(</button>
+                    <button class="calSkRight">)</button>
+                </div>
+                <div class="in">
+                    <button class="cal7">7</button>
+                    <button class="cal8">8</button>
+                </div>
+                <div class="in">
+                    <button class="cal4">4</button>
+                    <button class="cal5">5</button>
+                </div>
+                <div class="in">
+                    <button class="cal1">1</button>
+                    <button class="cal2">2</button>
+                </div>
+                <div class="in">
+                    <button class="calPrsent">AC</button>
+                    <button class="cal0">0</button>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="in">
+                    <button class="calRemove">⌫</button>
+                    <button class="calDevide">/</button>
+                </div>
+                <div class="in">
+                    <button class="cal9">9</button>
+                    <button class="calMultiply">*</button>
+                </div>
+                <div class="in">
+                    <button class="cal6">6</button>
+                    <button class="calMinus">-</button>
+                </div>
+                <div class="in">
+                    <button class="cal3">3</button>
+                    <button class="calPlus">+</button>
+                </div>
+                <div class="in">
+                    <button class="calFloor">.</button>
+                    <button class="calEquals">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="h1">Version 1.5</h1>
+
+
+    <script src="script.js" defer></script>
+
+</body>
+
+</html>
