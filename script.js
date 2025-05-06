@@ -145,10 +145,28 @@ calFloor.addEventListener('click', () => {
 calEquals.addEventListener('click', () => {
     try {
         input.value = eval(input.value);
+        saveToHistory(input.value); // <-- Bu yerga qo‘shiladi
     } catch {
         input.value = "Xatolik";
     }
 })
+
+function saveToHistory(value) {
+    let historyArray = JSON.parse(localStorage.getItem("calc-history")) || [];
+    historyArray.push(value);
+    localStorage.setItem("calc-history", JSON.stringify(historyArray));
+}
+window.addEventListener('DOMContentLoaded', () => {
+    let historyArray = JSON.parse(localStorage.getItem("calc-history")) || [];
+    historyArray.forEach(item => {
+        let h2 = document.createElement('h2');
+        h2.textContent = item;
+        h2.className = 'h2HH';
+        history.appendChild(h2);
+    });
+});
+
+
 
 document.addEventListener('keydown', (e) => {
     if (e.key === '0') {
@@ -398,18 +416,18 @@ document.addEventListener('click', () => {
     }
 })
 
-input.addEventListener('mousedown', () => {
-    input.disabled = true
-    input.value = `ERROR: You can't type here`
-})
-input.addEventListener('select', () => {
-    document.addEventListener('keydown', (e) => {
-        if (e.key = 'Backspace') {
-            input.value = ''
-            input.disabled = false
-        }
-    })
-})
+// input.addEventListener('mousedown', () => {
+//     input.disabled = true
+//     input.value = `ERROR: You can't type here`
+// })
+// input.addEventListener('select', () => {
+//     document.addEventListener('keydown', (e) => {
+//         if (e.key = 'Backspace') {
+//             input.value = ''
+//             input.disabled = false
+//         }
+//     })
+// })
 
 
 
@@ -511,6 +529,7 @@ calEquals.addEventListener('click', () => {
 })
 
 
+
 let p = null;
 
 input.addEventListener('input', (e) => {
@@ -520,6 +539,18 @@ input.addEventListener('input', (e) => {
     }
     p.textContent = e.target.value;
 });
+
+input.addEventListener('keydown', function (e) {
+    if (/^[a-zA-Z]$/.test(e.key)) {
+        e.preventDefault();
+    }
+});
+
+input.addEventListener('keydown', function (e) {
+    e.preventDefault();
+});
+
+
 
 
 let deleteHistory = document.querySelector('.delete-btn-h')
@@ -549,9 +580,11 @@ Yes.addEventListener('click', () => {
     deleteDarkMode.classList.remove('active')
     history.classList.remove('active')
     alert(`History of answers deleted`)
+    localStorage.removeItem("calc-history"); // <-- bu qo‘shiladi
     let h2HHs = document.querySelectorAll('.h2HH');
     if (h2HHs.length > 0) {
         h2HHs.forEach(h2 => h2.remove());
+        input.value = ''
     } else {
         alert("No elements found to delete.");
     }
@@ -563,18 +596,18 @@ let infoDarkMode = document.querySelector('.info-dark-mode')
 let info = document.querySelector('.info')
 let closeInfo = document.querySelector('.close')
 
-infoBtn.addEventListener('click', ()=>{
+infoBtn.addEventListener('click', () => {
     infoDarkMode.classList.add('active')
     info.classList.add('active')
 })
 
-closeInfo.addEventListener('click', ()=>{
+closeInfo.addEventListener('click', () => {
     infoDarkMode.classList.remove('active')
     info.classList.remove('active')
 })
 
-document.addEventListener('keydown', (e)=>{
-    if((e.key === 'i' || e.key === 'I' || e.key === 'Ш' || e.key === 'ш') && e.ctrlKey){
+document.addEventListener('keydown', (e) => {
+    if ((e.key === 'i' || e.key === 'I' || e.key === 'Ш' || e.key === 'ш') && e.ctrlKey) {
         infoDarkMode.classList.add('active')
         info.classList.add('active')
     }
@@ -583,19 +616,45 @@ document.addEventListener('keydown', (e)=>{
 
 let tooltipCastom = document.querySelector('#tooltipCastom')
 
-castomBtn.addEventListener('click', ()=>{
+castomBtn.addEventListener('click', () => {
     tooltipCastom.style.display = 'none'
 })
-castomBtn.addEventListener('mouseleave', ()=>{
+castomBtn.addEventListener('mouseleave', () => {
     tooltipCastom.style.display = 'block'
 })
 
 
 let tooltipHistory = document.querySelector('#tooltipHistory')
 
-historyBtn.addEventListener('click', ()=>{
+historyBtn.addEventListener('click', () => {
     tooltipHistory.style.display = 'none'
 })
-historyBtn.addEventListener('mouseleave', ()=>{
+
+historyBtn.addEventListener('mouseleave', () => {
     tooltipHistory.style.display = 'block'
+})
+
+historyBtn.addEventListener('mouseover', () => {
+    if (history.classList.contains('active')) {
+        tooltipHistory.style.display = 'none'
+    } else {
+        tooltipHistory.style.display = 'block'
+    }
+})
+
+castomBtn.addEventListener('mouseover', () => {
+    if (config.classList.contains('active')) {
+        tooltipCastom.style.display = 'none'
+    } else {
+        tooltipCastom.style.display = 'block'
+    }
+})
+
+
+let forContact = document.querySelector('.for-contact')
+let contact = document.querySelector('.contact')
+darkMode.addEventListener('click', ()=>{
+    contact.classList.toggle('dark-mode')
+    forContact.classList.toggle('dark-mode')
+    infoBtn.classList.toggle('dark-mode')
 })

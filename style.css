@@ -19,8 +19,8 @@ input[type=number]::-webkit-outer-spin-button {
     width: 500px;
     height: 650px;
     position: relative;
-    margin: -20px auto 0 auto;
-    background: #070022;
+    margin: -50px auto 0 auto;
+    background: #100e14;
     border-radius: 15px;
     z-index: 0;
 }
@@ -83,7 +83,7 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 24px;
     transition: .3s;
     cursor: pointer;
-    background: #fff;
+    background: #000;
 }
 
 .cal .right .in .calFloor {
@@ -511,7 +511,7 @@ input:disabled {
     justify-content: center;
     align-items: center;
     display: inline-block;
-    left: 250px;
+    left: 360px;
     top: 28px;
     position: absolute;
 }
@@ -666,24 +666,41 @@ input:disabled {
 .castom-div:hover .tooltip,
 .for-info:hover .tooltip,
 .show-history:hover .tooltip, 
-.copy:hover .tooltip {
+.copy:hover .tooltip,
+.for-contact:hover .tooltip {
     opacity: 1;
     transform: translateX(-50%) translateY(15%);
     pointer-events: auto;
     text-align: center;
 }
 
+.show-history .tooltip{
+    bottom: -75px;
+}
+
+.show-history:hover .tooltip{
+    transform: translateX(-50%) translateY(-35%);
+}
+
+.copy .tooltip{
+    bottom: -50px;
+}
+
 .copy:hover .tooltip{
-    transform: translateX(-50%) translateY(-10%);
+    transform: translateX(-50%) translateY(-35%);
 }
 
 .for-info:hover .tooltip{
-    transform: translateX(-50%) translateY(-0%);
+    transform: translateX(-50%) translateY(-35%);
+}
+
+.for-info .tooltip{
+    bottom: -70px;
 }
 
 .for-info button:disabled{
     background: #fff;
-    color: #000;
+    color: #000 ;
     border: none;
     width: 40px;
 }
@@ -731,16 +748,74 @@ input:disabled {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 0 0 430px;
+    margin: -55px 0 0 1280px;
     position: absolute;
 }
 
-@media screen and (max-width: 450px) {
+.for-contact{
+    width: 80px;
+    height: 40px;
+    padding: 30px 60px;
+    background: none;
+    border: 1px solid #000;
+    text-decoration: none;
+    margin: -660px 0 0 200px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-size: 18px;
+    font-family: sans-serif;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.for-contact .contact{
+    color: #000;
+    text-decoration: none;
+}
+
+.for-contact:hover .tooltip{
+    transform: translateX(-50%) translateY(-35%);
+}
+
+.castom-div .tooltip{
+    bottom: -75px;
+}
+
+.castom-div:hover .tooltip{
+    transform: translateX(-50%) translateY(-35%);
+}
+
+.cal .left .in button,
+.cal .right .in button{
+        color: #FFFFFF;
+        background: #232323;
+        text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #0990CE, 0 0 30px #0990CE, 0 0 40px #0990CE, 0 0 55px #0990CE, 0 0 75px #0990CE;
+        color: #FFFFFF;
+        background: #232323;
+}
+
+.for-contact.dark-mode{
+    border: solid 1px #fff;
+    color: #fff;
+}
+
+.contact.dark-mode{
+    color: #fff;
+}
+
+.infoBtn.dark-mode{
+    color: #fff;
+}
+
+@media screen and (max-width: 400px) {
     .cal {
         width: 300px;
         height: 450px;
         position: relative;
-        margin: 80px auto 0 auto;
+        margin: 180px auto 0 auto;
     }
 
     .cal .inp {
@@ -806,7 +881,7 @@ input:disabled {
     h1 {
         position: absolute;
         z-index: -9999;
-        margin: -510px 0 0 120px;
+        margin: -510px 0 0 100px;
     }
 
     .castom {
@@ -830,6 +905,7 @@ input:disabled {
         color: #fff;
         padding: 5px;
         margin: 0 0 0 -7px;
+        border: 1px solid;
     }
 
     .config.active p {
@@ -871,5 +947,32 @@ input:disabled {
 
     .for-info {
         display: none;
+    }
+
+    .for-contact{
+        margin: -620px 0 0 10px;
+        width: 160px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .for-contact .contact {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .show-history{
+        margin: -60px 0 0 218px;
+        width: 160px;
+        height: 60px;
+    }
+
+    .copy{
+        margin: 10px 0 0 275px;
     }
 }
