@@ -665,7 +665,7 @@ input:disabled {
 
 .castom-div:hover .tooltip,
 .for-info:hover .tooltip,
-.show-history:hover .tooltip, 
+.show-history:hover .tooltip,
 .copy:hover .tooltip,
 .for-contact:hover .tooltip {
     opacity: 1;
@@ -674,49 +674,49 @@ input:disabled {
     text-align: center;
 }
 
-.show-history .tooltip{
+.show-history .tooltip {
     bottom: -75px;
 }
 
-.show-history:hover .tooltip{
+.show-history:hover .tooltip {
     transform: translateX(-50%) translateY(-35%);
 }
 
-.copy .tooltip{
+.copy .tooltip {
     bottom: -50px;
 }
 
-.copy:hover .tooltip{
+.copy:hover .tooltip {
     transform: translateX(-50%) translateY(-35%);
 }
 
-.for-info:hover .tooltip{
+.for-info:hover .tooltip {
     transform: translateX(-50%) translateY(-35%);
 }
 
-.for-info .tooltip{
+.for-info .tooltip {
     bottom: -70px;
 }
 
-.for-info button:disabled{
-    background: #fff;
-    color: #000 ;
-    border: none;
-    width: 40px;
-}
-
-.for-info button:last-child{
-    width: 20px;
-}
-
-.castom-div button:disabled{
+.for-info button:disabled {
     background: #fff;
     color: #000;
     border: none;
     width: 40px;
 }
 
-.show-history{
+.for-info button:last-child {
+    width: 20px;
+}
+
+.castom-div button:disabled {
+    background: #fff;
+    color: #000;
+    border: none;
+    width: 40px;
+}
+
+.show-history {
     position: absolute;
     width: 160px;
     height: 60px;
@@ -726,22 +726,22 @@ input:disabled {
     margin: -60px 0 0 1350px;
 }
 
-.show-history button{
+.show-history button {
     margin: 0;
 }
 
-.show-history button:disabled{
+.show-history button:disabled {
     background: #fff;
     color: #000;
     border: none;
     width: 40px;
 }
 
-.show-history button:last-child{
+.show-history button:last-child {
     width: 30px;
 }
 
-.copy{
+.copy {
     position: absolute;
     width: 50px;
     height: 50px;
@@ -752,7 +752,7 @@ input:disabled {
     position: absolute;
 }
 
-.for-contact{
+.for-contact {
     width: 80px;
     height: 40px;
     padding: 30px 60px;
@@ -771,43 +771,80 @@ input:disabled {
     text-transform: capitalize;
 }
 
-.for-contact .contact{
+.for-contact .contact {
     color: #000;
     text-decoration: none;
+    width: 100%;
+    height: 100%;
+    padding: 30px 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.for-contact:hover .tooltip{
+.for-contact:hover .tooltip {
     transform: translateX(-50%) translateY(-35%);
 }
 
-.castom-div .tooltip{
+.castom-div .tooltip {
     bottom: -75px;
 }
 
-.castom-div:hover .tooltip{
+.castom-div:hover .tooltip {
     transform: translateX(-50%) translateY(-35%);
 }
 
 .cal .left .in button,
-.cal .right .in button{
-        color: #FFFFFF;
-        background: #232323;
-        text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #0990CE, 0 0 30px #0990CE, 0 0 40px #0990CE, 0 0 55px #0990CE, 0 0 75px #0990CE;
-        color: #FFFFFF;
-        background: #232323;
+.cal .right .in button {
+    color: #FFFFFF;
+    background: #232323;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #0990CE, 0 0 30px #0990CE, 0 0 40px #0990CE, 0 0 55px #0990CE, 0 0 75px #0990CE;
+    color: #FFFFFF;
+    background: #232323;
 }
 
-.for-contact.dark-mode{
+.for-contact.dark-mode {
     border: solid 1px #fff;
     color: #fff;
 }
 
-.contact.dark-mode{
+.contact.dark-mode {
     color: #fff;
 }
 
-.infoBtn.dark-mode{
+.infoBtn.dark-mode {
     color: #fff;
+}
+
+
+.loader {
+    --b: 25%;
+    height: 80px;
+    aspect-ratio: 1/cos(30deg);
+    position: relative;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%, 50% 0, 50% var(--b), calc(var(--b)*cos(30deg)) calc(100% - var(--b)/2), calc(100% - var(--b)*cos(30deg)) calc(100% - var(--b)/2), 50% var(--b));
+    filter: blur(12px);
+    margin: 300px auto 0 auto;
+}
+
+.loader:before {
+    content: "";
+    position: absolute;
+    inset: -8% 0;
+    background: conic-gradient(#0000 35%, #0B486B, #0000 65%);
+    animation: l5 2s linear infinite;
+}
+
+
+@keyframes l5 {
+    to {
+        rotate: 1turn
+    }
+}
+
+.copy,
+.copy-btn {
+    z-index: 0;
 }
 
 @media screen and (max-width: 400px) {
@@ -949,7 +986,7 @@ input:disabled {
         display: none;
     }
 
-    .for-contact{
+    .for-contact {
         margin: -620px 0 0 10px;
         width: 160px;
         height: 60px;
@@ -966,13 +1003,18 @@ input:disabled {
         align-items: center;
     }
 
-    .show-history{
+    .show-history {
         margin: -60px 0 0 218px;
         width: 160px;
         height: 60px;
     }
 
-    .copy{
+    .copy {
         margin: 10px 0 0 275px;
+    }
+
+    .copy,
+    .copy-btn {
+        z-index: 0;
     }
 }

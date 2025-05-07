@@ -653,8 +653,20 @@ castomBtn.addEventListener('mouseover', () => {
 
 let forContact = document.querySelector('.for-contact')
 let contact = document.querySelector('.contact')
-darkMode.addEventListener('click', ()=>{
+darkMode.addEventListener('click', () => {
     contact.classList.toggle('dark-mode')
     forContact.classList.toggle('dark-mode')
     infoBtn.classList.toggle('dark-mode')
 })
+
+
+window.addEventListener("load", () => {
+    let loader = document.querySelector(".loader");
+    let mainSection = document.querySelector(".main-section");
+
+
+    setTimeout(() => {
+        loader.style.display = "none";
+        mainSection.style.display = "block";
+    }, 2500);
+});
