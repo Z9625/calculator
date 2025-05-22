@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time | Stopwatch</title>
+    <link rel="stylesheet" href="time.css">
+    <link rel="shortcut icon" href="../ChatGPT Image 7 апр. 2025 г., 22_47_51.png" type="image/x-icon" />
+</head>
+
+<body>
+
+    <div class="loader"></div>
+
+    <section class="main-section" style="display: none;">
+        <div class="a"><a class="back" href="../contact.html">Back</a></div>
+
+        <div class="btn-group">
+            <button class="btn continue">continue</button>
+            <button class="btn stop">stop</button>
+            <button class="btn stopwatch-start">start</button>
+            <button class="btn stopwatch-stop">stop</button>
+            <button class="btn stopwatch-restart" style="display: none;">restart</button>
+            <button class="btn stopwatch-btn">stopwatch</button>
+        </div>
+
+        <div class="time">
+            <h1 class="h1-time" id="h1"></h1>
+        </div>
+        <div class="stopwatch none">
+            <div id="stopwatch" class="stopWatchq">
+                <h1 id="hours" class="time-h1" style="display: inline-block;">0h</h1> <span>:</span>
+                <h1 id="minutes" class="time-h1" style="display: inline-block;">0m</h1> <span>:</span>
+                <h1 id="seconds" class="time-h1" style="display: inline-block;">0s</h1> <span>:</span>
+                <h1 id="milliseconds" class="time-h1" style="display: inline-block;">0ms</h1>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="time.js"></script>
+</body>
+
+</html>

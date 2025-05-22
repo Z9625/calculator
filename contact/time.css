@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.time {
+    width: 50%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 00px auto 0 auto;
+    position: relative;
+}
+
+#h1 {
+    font-family: sans-serif;
+    font-size: 48px;
+    font-weight: 200;
+}
+
+.btn-group {
+    width: 50%;
+    height: 120px;
+    margin: 0 auto 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.btn-group .btn {
+    width: 120px;
+    height: 50px;
+    border: 1px solid;
+    background: none;
+    color: #000;
+    font-family: sans-serif;
+    font-size: 18px;
+    text-align: center;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.back {
+    width: 120px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid;
+    color: #000;
+    background: none;
+    text-transform: capitalize;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    position: absolute;
+    text-decoration: none;
+}
+
+.a {
+    margin: 0;
+    width: 100%;
+    height: 110px;
+    padding: 50px;
+}
+
+.stopwatch {
+    width: 500px;
+    height: 400px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#stopwatch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#stopwatch h1 {
+    display: inline-block;
+}
+
+.stopwatch-start,
+.stopwatch-stop{
+    display: none;
+}
+
+.time-h1{
+    font-size: 48px;
+    font-weight: 400;
+    font-family: sans-serif;
+}
+
+span{
+    font-size: 48px;
+}
+
+#stopwatch{
+    width: 100%;
+}
+
+.time.none{
+    display: none;
+}
+.stopwatch.none{
+    display: none;
+}
+
+.loader {
+    --b: 25%;
+    height: 80px;
+    aspect-ratio: 1/cos(30deg);
+    position: relative;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%, 50% 0, 50% var(--b), calc(var(--b)*cos(30deg)) calc(100% - var(--b)/2), calc(100% - var(--b)*cos(30deg)) calc(100% - var(--b)/2), 50% var(--b));
+    filter: blur(12px);
+    margin: 300px auto 0 auto;
+}
+
+.loader:before {
+    content: "";
+    position: absolute;
+    inset: -8% 0;
+    background: conic-gradient(#0000 35%, #0B486B, #0000 65%);
+    animation: l5 2s linear infinite;
+}
+
+@keyframes l5 {
+    to {
+        rotate: 1turn
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .time {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #h1 {
+        font-size: 32px;
+    }
+
+    .a {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        margin: 100px 0 0 0;
+    }
+
+    .btn-group {
+        margin: 200px auto 0 auto;
+        width: 80%;
+        height: auto;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .stopwatch{
+        width: 60%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .stopWatchq{
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .stopWatchq h1{
+        font-size: 32px;
+    }
+    .stopWatchq span{
+        font-size: 32px;
+    }
+    #stopwatch{
+        width: 100%;
+    }
+}

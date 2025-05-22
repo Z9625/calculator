@@ -84,6 +84,7 @@ input[type=number]::-webkit-outer-spin-button {
     transition: .3s;
     cursor: pointer;
     background: #000;
+    text-shadow: none;
 }
 
 .cal .right .in .calFloor {
@@ -236,6 +237,8 @@ h1 {
     margin: -50px 0 0 1300px;
     z-index: 999;
     text-shadow: 0 0 10px #ffffff, 0 0 15px #000;
+    text-shadow: 0 0 5px #fff, 0 0 10px #000, 0 0 15px #000, 0 0 20px #333, 0 0 30px #333, 0 0 40px #333, 0 0 55px #444, 0 0 75px #000;
+    font-size: 32px;
 }
 
 h1.dark-mode {
@@ -511,7 +514,7 @@ input:disabled {
     justify-content: center;
     align-items: center;
     display: inline-block;
-    left: 360px;
+    left: 370px;
     top: 28px;
     position: absolute;
 }
@@ -748,7 +751,7 @@ input:disabled {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: -55px 0 0 1280px;
+    margin: -55px 0 0 1255px;
     position: absolute;
 }
 
@@ -801,6 +804,7 @@ input:disabled {
     text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #0990CE, 0 0 30px #0990CE, 0 0 40px #0990CE, 0 0 55px #0990CE, 0 0 75px #0990CE;
     color: #FFFFFF;
     background: #232323;
+    text-shadow: none;
 }
 
 .for-contact.dark-mode {

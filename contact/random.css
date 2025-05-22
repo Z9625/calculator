@@ -1,0 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.random-elements {
+    width: 40%;
+    height: 300px;
+    overflow: auto;
+    margin: auto;
+    padding: 10px;
+    flex-wrap: wrap;
+    display: block;
+}
+
+.inputs-inp {
+    width: 40%;
+    margin: 100px auto 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+}
+
+#input:focus+.inputs-inp,
+#input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 8px 0;
+    background: transparent;
+    font-size: 16px;
+    outline: none;
+}
+
+.inputs-inp::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #008000;
+    transition: 0.3s ease;
+}
+
+#input:focus+.inputs-inp::after,
+.inputs-inp:focus-within::after {
+    width: 100%;
+}
+
+.randomBtn-div {
+    margin: auto;
+    width: 30%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#push {
+    border: none;
+    background: none;
+    border: 1px solid;
+    color: #000;
+    width: 80px;
+    height: 35px;
+    cursor: pointer;
+    transition: 0.3s background;
+    width: 90px;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+#push:hover {
+    background: #000;
+    color: #fff;
+}
+
+.randomBtn {
+    width: 120px;
+    height: 50px;
+    border: none;
+    background: none;
+    color: #000;
+    border: 1px solid;
+    transition: 0.3s;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+.randomBtn:hover {
+    background: #000;
+    border: none;
+    color: #fff;
+}
+
+li {
+    margin: 0 0 10px 10px;
+    font-family: sans-serif;
+    font-size: 18px;
+    list-style-type: decimal-leading-zero;
+}
+
+.h1-div {
+    width: 50%;
+    height: auto;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+}
+
+.h1-div #h1 {
+    text-transform: capitalize;
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+}
+
+button {
+    text-transform: capitalize;
+}
+
+
+.tooltip {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: #2b2b30;
+    color: #d6d6d6;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease-in-out;
+    font-size: 16px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.tooltip-arrow {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #2b2b30;
+}
+
+.back:hover .tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(15%);
+    pointer-events: auto;
+    text-align: center;
+}
+
+.back {
+    position: absolute;
+    width: 160px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -50px 0 0 50px;
+}
+
+.back-btn {
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+}
+
+.back .tooltip {
+    color: #fff;
+    text-align: center;
+}
+
+.back .tooltip ul {
+    padding: 0;
+}
+
+.back .tooltip ul li {
+    list-style: none;
+}
+
+.back .tooltip ul button:disabled {
+    background: #fff;
+    color: #000;
+    border: none;
+    width: 50px;
+}
+
+.back .tooltip ul {
+    width: auto;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.back .tooltip ul li {
+    width: 100%;
+}
+
+.back .tooltip ul li button {
+    margin: auto;
+}
+
+.back:hover .tooltip {
+    transform: translateX(-50%) translateY(-35%);
+}
+
+.back .tooltip {
+    bottom: -80px;
+}
+
+.back .tooltip ul li button a {
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+}
+
+.back .back-btn {
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    width: 160px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px;
+    cursor: pointer;
+    font-size: 24px;
+}
+.h1-div{
+    display: flex;
+    justify-self: left;
+    align-items: center;
+}
+#h1{
+    margin: auto;
+}
+h2{
+    position: absolute;
+}
+ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.loader {
+    --b: 25%;
+    height: 80px;
+    aspect-ratio: 1/cos(30deg);
+    position: relative;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%, 50% 0, 50% var(--b), calc(var(--b)*cos(30deg)) calc(100% - var(--b)/2), calc(100% - var(--b)*cos(30deg)) calc(100% - var(--b)/2), 50% var(--b));
+    filter: blur(12px);
+    margin: 300px auto 0 auto;
+}
+
+.loader:before {
+    content: "";
+    position: absolute;
+    inset: -8% 0;
+    background: conic-gradient(#0000 35%, #0B486B, #0000 65%);
+    animation: l5 2s linear infinite;
+}
+
+@keyframes l5 {
+    to {
+        rotate: 1turn
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .back{
+        width: 120px;
+        height: 60px;
+        font-family: sans-serif;
+        font-size: 18px;
+        position: absolute;
+        margin: -150px 0 0 50px;
+    }
+    .inputs-inp{
+        margin: 200px auto 0 auto;
+        width: 80%;
+    }
+    .random-elements{
+        width: 80%;
+        padding: 10px 0 0 0;
+    }
+    li{
+        margin: 10px 0 0 0;
+    }
+    .h1-div{
+        width: 80%;
+    }
+}
