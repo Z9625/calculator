@@ -10,13 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        @media screen and (max-width: 400px) {
-            details {
-                margin: -595px 0 0 185px;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -26,9 +19,9 @@
 
     <section class="main-section" style="display: none;">
         <div class="castom-div">
-            <button class="castom">Custom Settings</button>
+            <button class="castom">Кастомные настройки</button>
             <div class="tooltip" id="tooltipCastom">
-                Custom Settings
+                Кастомные настройки
                 <ul>
                     <li><button disabled>Insert</button></li>
                 </ul>
@@ -37,27 +30,27 @@
         </div>
         <div class="config">
             <div class="cal-bg">
-                <p>Background Color</p>
+                <p>Цвет фона</p>
                 <input type="color" name="" id="cal-bg">
             </div>
             <div class="cal-inp-bg">
-                <p>Calculator's Display bg color</p>
+                <p>Цвет фон дисплея калькулятора</p>
                 <input type="color" id="inp-bg">
             </div>
             <div class="cal-inp-color">
-                <p>Calculator's Display color</p>
+                <p>Цвет дисплея калькулятора</p>
                 <input type="color" name="" id="inp-color">
             </div>
             <div class="cal-btn-bg">
-                <p>Calculator's Button bg color</p>
+                <p>Цвет фона кнопок калькулятора</p>
                 <input type="color" name="" id="cal-btn">
             </div>
             <div class="cal-btn-color">
-                <p>Calculator's Button color</p>
+                <p>Цвет кнопок калькулятора</p>
                 <input type="color" name="" id="cal-btn-color">
             </div>
             <div class="dark-mode">
-                <p>Dark Mode</p>
+                <p>Темный мод</p>
                 <label class="switch">
                     <input type="checkbox" id="onOffSwitch">
                     <span class="slider"></span>
@@ -68,7 +61,7 @@
         <div class="for-info">
             <button class="infoBtn"><i class="fa-solid fa-info"></i></button>
             <div class="tooltip" id="tooltipInfo">
-                Info
+                Информация
                 <ul>
                     <li><button disabled>CTRL</button>&nbsp; + &nbsp;<button disabled>I</button>
                 </ul>
@@ -79,15 +72,14 @@
         <div class="info-dark-mode">
             <div class="info">
                 <ul>
-                    <li><button disabled>CTRL</button>&nbsp; + &nbsp;<button disabled>ALT</button>&nbsp; + &nbsp;<button
-                            disabled>H</button>&nbsp; = &nbsp;Show History</li>
-                    <li><button disabled>Insert</button>&nbsp; = &nbsp;Custom settings</li>
-                    <li><button disabled>Enter</button>&nbsp; = &nbsp;View Answer</li>
-                    <li><button disabled>=</button>&nbsp; = &nbsp;View Answer</li>
-                    <li><button disabled>Delete</button>&nbsp; = &nbsp;Clear</li>
-                    <li><button disabled>BackSpace</button>&nbsp; = &nbsp;Back</li>
-                    <li><button disabled>CTRL</button>&nbsp; + &nbsp;<button disabled>I</button>&nbsp; = &nbsp; View
-                        Info
+                    <li style="width: 400px;"><button disabled>CTRL</button>&nbsp; + &nbsp;<button disabled>ALT</button>&nbsp; + &nbsp;<button
+                            disabled>H</button>&nbsp; = &nbsp;Показать историю</li>
+                    <li><button disabled>Insert</button>&nbsp; = &nbsp;Кастомные настройки</li>
+                    <li><button disabled>Enter</button>&nbsp; = &nbsp;Посмотреть ответы</li>
+                    <li><button disabled>=</button>&nbsp; = &nbsp;Посмотреть ответы</li>
+                    <li><button disabled>Delete</button>&nbsp; = &nbsp;Очистить</li>
+                    <li><button disabled>BackSpace</button>&nbsp; = &nbsp;Назад</li>
+                    <li><button disabled>CTRL</button>&nbsp; + &nbsp;<button disabled>I</button>&nbsp; = Информация
                     </li>
                     <button class="close">Close</button>
                 </ul>
@@ -99,7 +91,7 @@
         <div class="copy">
             <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
             <div class="tooltip">
-                Click to Copy
+                Копировать
                 <div class="tooltip-arrow"></div>
             </div>
         </div>
@@ -108,9 +100,9 @@
 
 
         <div class="show-history">
-            <button class="historic">Show History</button>
+            <button class="historic">Показать историю</button>
             <div class="tooltip" id="tooltipHistory">
-                Show History
+                Показать историю
                 <ul>
                     <li><button disabled>CTRL</button>&nbsp; + &nbsp;<button disabled>ALT</button>&nbsp; + &nbsp;<button
                             disabled>H</button></li>
@@ -124,17 +116,17 @@
 
         <div class="delete-dark-mode">
             <div class="confirm-to-delete">
-                <h1>Are you sure to delete history?</h1>
+                <h1>Вы уверены удалять историю?</h1>
                 <div class="btn-group">
-                    <button class="no">No <i class="fa-solid fa-x"></i></button>
-                    <button class="yes">Yes <i class="fa-solid fa-trash"></i></button>
+                    <button class="no">Нет <i class="fa-solid fa-x"></i></button>
+                    <button class="yes">Да <i class="fa-solid fa-trash"></i></button>
                 </div>
             </div>
         </div>
 
         <div class="cal">
             <div class="inp">
-                <input type="text" name="" id="input">
+                <input type="text" name="" id="input" >
             </div>
 
             <div class="obs">
@@ -188,16 +180,16 @@
 
 
         <div class="for-contact" data-aos="fade-up-right">
-            <a href="contact.html" class="contact">contact</a>
+            <a href="contact.html" class="contact">контакт</a>
             <div class="tooltip" id="tooltipContact">
-                Contact
+                Контакт
                 <div class="tooltip-arrow"></div>
             </div>
         </div>
 
         <details>
-            <summary>Language (UK)</summary>
-            <a href="russian.html">Русский (RU)</a>
+            <summary>Язык (RU)</summary>
+            <a href="index.html">Русский (RU)</a>
             <a href="uzbek.html">Uzbekcha (UZ)</a>
             <a href="english.html">English (US)</a>
             <a href="index.html">English (UK)</a>

@@ -10,7 +10,8 @@
     position: relative;
     padding: 100px 0 0 0;
 }
-br{
+
+br {
     display: none;
 }
 
@@ -298,59 +299,106 @@ footer {
     position: relative;
     bottom: 0;
     left: 0;
-    background: #000000;
-    padding: 10px;
+    background: #000000ec;
+    /* padding: 10px; */
     display: flex;
 }
 
-footer ul {
-    width: 300px;
+h3 {
+    width: 10%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0;
+    position: absolute;
 }
 
-footer ul li {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-footer ul li h3,
-footer ul li h3 a {
+h3,
+h3 a {
     color: #fff;
     text-decoration: none;
     font-family: sans-serif;
     transition: 0.3s;
     font-size: 18px;
-    display: inline-block;
+    margin: 0;
 }
 
-footer ul li h3 a:hover {
+/* h3 a:hover {
     text-decoration: underline;
     text-underline-offset: 4px;
-}
+} */
 
-.h1-text-br{
+.h1-text-br {
     display: block;
 }
 
-.a{
+.a {
     font-size: 24px;
 }
 
-#aTelegram {
+#footer-a {
+    width: 20px;
+    height: 20px;
     position: relative;
     display: inline-block;
     color: #0077cc;
-    font-size: 18px;
+    font-size: 24px;
     text-decoration: none;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 0 0;
+    z-index: 999999999;
 }
 
-#aTelegram::after {
+#footer-a:nth-child(2){
+    color: #000;
+}
+
+.blur {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* Safari uchun */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 0 20px;
+    padding: 0;
+    transition: 0.3s;
+    color: white;
+    font-weight: bold;
+    border: none;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* .blur:hover {
+    background-color: #ffffff33;
+    backdrop-filter: blur(10px);
+    color: #fff;
+} */
+
+#footer-a:nth-child(2) {
+    color: #000000;
+}
+
+#footer-a:hover {
+    transform: scale(1.1);
+}
+
+/* #footer-a::after {
     content: "";
     position: absolute;
     left: 0;
@@ -364,19 +412,23 @@ footer ul li h3 a:hover {
     transition: transform 0.3s ease;
 }
 
-#aTelegram:hover::after {
+#footer-a:hover::after {
     font-size: 18px;
     transform: scaleX(1);
-}
+} */
 
-footer ul:nth-child(2){
-    width: auto;
+footer ul {
+    width: 100%;
+    height: 100%;
     font-size: 18px;
     font-weight: 400;
     margin: 0 0 0 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-footer .footer-h5{
+footer .footer-h5 {
     text-align: center;
     color: #fff;
 }
@@ -401,19 +453,22 @@ footer .footer-h5{
     .another-projects {
         flex-wrap: wrap;
     }
-    footer{
+
+    footer {
         width: 100%;
         height: 200px;
         display: flex;
         flex-direction: column;
         padding: 10px 0 0 0;
     }
+
     footer ul {
         width: 100%;
         height: auto;
         margin: 10px 0 0 0;
     }
-    footer ul:nth-child(2){
+
+    footer ul:nth-child(2) {
         width: auto;
         display: flex;
         justify-content: center;
@@ -421,13 +476,15 @@ footer .footer-h5{
         padding: 0;
         margin: 30px 0 0 0;
     }
-    .footer-h5{
+
+    .footer-h5 {
         width: auto;
         margin: 0;
         padding: 0;
         text-align: center;
     }
-    br{
+
+    br {
         display: block;
     }
 }

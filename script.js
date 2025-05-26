@@ -497,7 +497,7 @@ document.addEventListener('keydown', (e) => {
 
 
 let h2History;
-
+let data = 0
 
 document.addEventListener('keydown', (e) => {
     if (e.key === '=') {
@@ -506,14 +506,23 @@ document.addEventListener('keydown', (e) => {
         h2History.textContent = input.value
         h2History.className = 'h2HH'
     }
+
+    console.log(input.value);
 })
+
+input.addEventListener('input', () => {
+    data = input.value
+    console.log(input.value);
+} )
 
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         h2History = document.createElement('h2')
         history.appendChild(h2History)
-        h2History.textContent = input.value
+        h2History.textContent = `${input.value}`
         h2History.className = 'h2HH'
+        data = input.value
+        console.log(input.value);
     }
 })
 
@@ -532,23 +541,23 @@ calEquals.addEventListener('click', () => {
 
 let p = null;
 
-input.addEventListener('input', (e) => {
-    if (!p) {
-        p = document.createElement('p');
-        history.appendChild(p);
-    }
-    p.textContent = e.target.value;
-});
+// input.addEventListener('input', (e) => {
+//     if (!p) {
+//         p = document.createElement('p');
+//         history.appendChild(p);
+//     }
+//     p.textContent = e.target.value;
+// });
 
-input.addEventListener('keydown', function (e) {
-    if (/^[a-zA-Z]$/.test(e.key)) {
-        e.preventDefault();
-    }
-});
+// input.addEventListener('keydown', function (e) {
+//     if (/^[a-zA-Z]$/.test(e.key)) {
+//         e.preventDefault();
+//     }
+// });
 
-input.addEventListener('keydown', function (e) {
-    e.preventDefault();
-});
+// input.addEventListener('keydown', function (e) {
+//     e.preventDefault();
+// });
 
 
 
