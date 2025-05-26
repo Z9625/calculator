@@ -63,6 +63,19 @@ header .btn-div button:hover{
     background: rgba(255, 255, 255, 0.2);
     border-radius: 4px;
 }
+header .btn-div a{
+    width: 150px;
+    height: 40px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 18px;
+}
 table{
     font-family: sans-serif;
     border-collapse: collapse;
