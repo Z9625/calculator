@@ -1,0 +1,17 @@
+[
+    {
+        "version": "1.7.0.1",
+        "date": "31.05.2025",
+        "change": "Fixed bugs in CSS"
+    },
+    {
+        "version": "1.7.0.0",
+        "date": "27.05.2025",
+        "change": "Added Support page. You can write to the bot, after we can read and answer."
+    },
+    {
+        "version": "1.6.5.0",
+        "date": "26.05.2025",
+        "change": "Added New Languages (English (US), English (UK), Russian(RU) and Uzbek(UZ))"
+    }
+]

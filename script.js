@@ -513,7 +513,7 @@ document.addEventListener('keydown', (e) => {
 input.addEventListener('input', () => {
     data = input.value
     console.log(input.value);
-} )
+})
 
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {

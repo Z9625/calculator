@@ -83,6 +83,12 @@ h2 {
     padding: 0 0 0 1px;
     font-size: 18px;
     font-family: sans-serif;
+    transition: 0.3s background;
+  }
+  .inp-div input:focus{
+  border-radius: 4px;
+  border: none;
+  background: rgba(255, 255, 255, 0.05);
 }
 .inp-div textarea{
     width: 100%;
@@ -95,8 +101,11 @@ h2 {
     border: 1px solid;
     font-family: sans-serif;
     font-size: 18px;
-    padding: 5px 0 0 2px;
+    padding: 8px 0 0 2px;
     padding-right: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
 }
 .inp-div textarea::-webkit-scrollbar {
   width: 10px;
